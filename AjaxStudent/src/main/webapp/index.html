@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Management</title>
+<link rel="shortcut icon" href="#">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+</head>
+<body>
+	<h1>Welcome to the Student Management</h1><button type="button" id="logout">logout</button>
+	<hr>
+	<h2>Add a Student</h2>
+	<hr>
+	<div>
+		<input type='text' id='addRollNo' placeholder="Enter Roll No">
+		<input type="text" id='addName' placeholder="Enter Student Name">
+		<input type="text" id='addDept' placeholder="Enter Student Department">
+		<input type="text" id='addGrade' placeholder="Enter Student Grade">
+		<input type="button" id='addStudent' value="ADD STUDNET">
+	</div>
+	<hr>
+	<h2>Update a Student</h2>
+	<hr>
+	<div>
+		<input type='text' id='updateRollNo' placeholder="Enter Roll No">
+		<input type="text" id='updateName' placeholder="Enter Student Name">
+		<input type="text" id='updateDept' placeholder="Enter Student Department">
+		<input type="text" id='updateGrade' placeholder="Enter Student Grade">
+		<input type="button" id='updateStudent' value="UPDATE STUDNET">
+	</div>
+	<hr>
+	<h2>View a Student</h2>
+	<hr>
+	<div>
+		<input type='text' id='viewRollNo' placeholder="Enter Roll No">
+		<input type="button" id='viewStudent' value="VIEW A STUDNET">
+		<input type="button" id='viewAllStudent' value="VIEW ALL STUDNET">
+	</div>
+	<hr>
+	<h2>Delete a Student</h2>
+	<hr>
+	<div>
+		<input type='text' id='deleteRollNo' placeholder="Enter Roll No">
+		<input type="button" id='deleteStudent' value="DELETE A STUDNET">
+	</div>
+	<hr>
+	<script src="js/rest.js"></script>
+<!-- 	<script>
+
+	$("#addStudent").click(function(){
+		var stud = 
+			{
+				rollNo:$("#addRollNo").val(),
+				name:$("#addName").val(),
+				dept:$("#addDept").val(),
+				grade:$("#addGrade").val()
+			}
+		alert("From Client "+JSON.stringify(stud));
+		$.ajax({
+			type: "POST",
+			url: "rest/studentManagement",
+			contentType: "application/json",
+			data: JSON.stringify(stud),
+			dataType: "json",
+			success: function(data1) {
+				alert("From Server" + JSON.stringify(data1));
+				console.log(JSON.stringify(data1));
+				location.href = "NewFile.html"
+				//window.location.href="/NewFile.html";
+			}
+		});	
+	});
+
+	$("#updateStudent").click(function(){
+		var stud = 
+			{
+				rollNo:$("#updateRollNo").val(),
+				name:$("#updateName").val(),
+				dept:$("#updateDept").val(),
+				grade:$("#updateGrade").val()
+			}
+		alert("From Client "+JSON.stringify(stud));
+		$.ajax({
+			type: "PUT",
+			url: "rest/studentManagement",
+			contentType: "application/json",
+			data: JSON.stringify(stud),
+			dataType: "json",
+			success: function(data1) {
+				alert("From Server" + JSON.stringify(data1));
+				console.log(JSON.stringify(data1));
+				//location.href = "success.html"
+			}
+		});	
+	});
+
+	$("#viewStudent").click("submit",function(){	
+		var rollNo = $("#viewRollNo").val();
+		alert("From Client "+JSON.stringify(stud));
+		$.ajax({
+			type: "GET",
+			url: `rest/studentManagement/${rollNo}`,
+			dataType: "json",
+			success: function(data1) {
+				alert("From Server" + JSON.stringify(data1));
+				console.log(JSON.stringify(data1));
+				//location.href = "success.html"
+			}
+		});	
+	});
+
+	$("#viewAllStudent").click(function(){	
+		
+		alert("From Client "+JSON.stringify(stud));
+		$.ajax({
+			type: "GET",
+			url: `rest/studentManagement`,
+			dataType: "json",
+			success: function(data1) {
+				alert("From Server" + JSON.stringify(data1));
+				console.log(JSON.stringify(data1));
+				//location.href = "success.html"
+			}
+		});	
+	});
+
+	$("#deleteStudent").click(function(){	
+		var rollNo = $("#deleteRollNo").val();
+		alert("From Client "+JSON.stringify(stud));
+		$.ajax({
+			type: "DELETE",
+			url: `rest/studentManagement/${rollNo}`,
+			dataType: "json",
+			success: function(data1) {
+				alert("From Server" + JSON.stringify(data1));
+				console.log(JSON.stringify(data1));
+				//location.href = "success.html"
+			}
+		});	
+	});
+</script> -->
+</body>
+</html>
